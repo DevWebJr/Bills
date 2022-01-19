@@ -7,11 +7,12 @@ $(function() {
         if (formOrder[0].checkValidity()) {
             e.preventDefault();
             $.ajax({
-                url: 'http://localserver/JavaScript/Ajax/bills/src/process.php',
                 type: 'post',
+                url: 'http://localhost:3308/LoacalServer/JavaScript/Ajax/bills/src/process.php',
                 data: formOrder.serialize() +'&action=create',
-                success: function(response) {
-                    console.log(response);
+                asynch : false,
+                success: function(data) {
+                    console.log(data);
                 }
             })
         }

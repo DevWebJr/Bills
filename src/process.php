@@ -1,7 +1,7 @@
 <?php
-require_once './src/DataBaseConnection.php';
+require_once 'DataBaseConnection.php';
 
-$db = DataBaseConnection();
+$db = new DataBaseConnection();
 //Création des factures
 if(isset($_POST['action']) && $_POST['action'] == 'create') {
     extract($_POST);

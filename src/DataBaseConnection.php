@@ -2,14 +2,15 @@
 
 class DataBaseConnection
 {
-    private $host = "mysql:dbname=crud_bills";
+    private $host= 'localhost:3308';
+    private $dbname = "crud_bills";
     private $user = "root";
     private $password = "";
 
     private function getConnection()
     {
         try {
-            return new PDO($this->host, $this->user, $this->password);
+            return new PDO("mysql:host=".$this->host.";.dbname=".$this->dbname,$this->user, $this->password);
         } catch (PDOException $e) {
             die('Erreur: '.$e->getMessage());
         }
